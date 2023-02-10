@@ -13,6 +13,7 @@ import HeaderComponent from "./components/Header.vue";
   margin: 0;
   box-sizing: border-box;
   background-color: gray;
+  font-size: 62.5%;
 }
 
 
