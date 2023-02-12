@@ -73,7 +73,7 @@ import { onMounted, ref } from "vue";
 
 const forumsecondnavdiv = ref(null);
 const whatsnewoptions = ref(null);
-const membersoptions = ref(null)
+const membersoptions = ref(null);
 
 const ShowWhatsnew = () => {
   if (whatsnewoptions.value.style.display === "none") {
@@ -89,12 +89,14 @@ const ShowMembersOptions = () => {
   } else {
     membersoptions.value.style.display = "none";
   }
-}
+};
 
 const ShowForumnav = () => {
   if (forumsecondnavdiv.value.style.display === "none") {
+    membersoptions.value.style.marginTop = "-3rem"
     forumsecondnavdiv.value.style.display = "flex";
   } else {
+    membersoptions.value.style.marginTop = "0.2rem"
     forumsecondnavdiv.value.style.display = "none";
   }
 };
@@ -188,12 +190,11 @@ onMounted(() => {
       &__item {
         background-color: #383c42;
         font-family: Quicksand;
-        color: rgba(white,0.7);
+        color: rgba(white, 0.7);
         text-decoration: none;
         &:hover {
           color: white;
         }
-        
       }
     }
     &__item {
