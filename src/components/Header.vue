@@ -50,21 +50,21 @@
           History
         </RouterLink>
       </nav>
+      <nav ref="membersoptions" class="header__secondnav__membersoptions">
+        <RouterLink class="header__secondnav__membersoptions__item" to="#">
+          Registered members
+        </RouterLink>
+        <RouterLink class="header__secondnav__membersoptions__item" to="#">
+          Current visitors
+        </RouterLink>
+        <RouterLink class="header__secondnav__membersoptions__item" to="#">
+          New profile Posts
+        </RouterLink>
+        <RouterLink class="header__secondnav__membersoptions__item" to="#">
+          Search profile posts
+        </RouterLink>
+      </nav>
     </div>
-    <nav ref="membersoptions" class="header__secondnav__membersoptions">
-      <RouterLink class="header__secondnav__membersoptions__item" to="#">
-        Registered members
-      </RouterLink>
-      <RouterLink class="header__secondnav__membersoptions__item" to="#">
-        Current visitors
-      </RouterLink>
-      <RouterLink class="header__secondnav__membersoptions__item" to="#">
-        New profile Posts
-      </RouterLink>
-      <RouterLink class="header__secondnav__membersoptions__item" to="#">
-        Search profile posts
-      </RouterLink>
-    </nav>
   </header>
 </template>
 
@@ -93,7 +93,7 @@ const ShowMembersOptions = () => {
 
 const ShowForumnav = () => {
   if (forumsecondnavdiv.value.style.display === "none") {
-    forumsecondnavdiv.value.style.display = "block";
+    forumsecondnavdiv.value.style.display = "flex";
   } else {
     forumsecondnavdiv.value.style.display = "none";
   }
@@ -173,7 +173,9 @@ onMounted(() => {
     display: flex;
     background-color: #42464d;
     gap: 1rem;
+    width: 100vw;
     &__membersoptions {
+      z-index: 10;
       display: none;
       flex-direction: column;
       gap: 1rem;
