@@ -93,7 +93,7 @@ const ShowMembersOptions = () => {
 
 const ShowForumnav = () => {
   if (forumsecondnavdiv.value.style.display === "none") {
-    membersoptions.value.style.marginTop = "-3rem"
+    membersoptions.value.style.marginTop = "-3.2rem"
     forumsecondnavdiv.value.style.display = "flex";
   } else {
     membersoptions.value.style.marginTop = "0.2rem"
