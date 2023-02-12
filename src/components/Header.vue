@@ -50,21 +50,21 @@
           History
         </RouterLink>
       </nav>
-      <nav ref="membersoptions" class="header__secondnav__membersoptions">
-        <RouterLink class="header__secondnav__membersoptions__item" to="#">
-          Registered members
-        </RouterLink>
-        <RouterLink class="header__secondnav__membersoptions__item" to="#">
-          Current visitors
-        </RouterLink>
-        <RouterLink class="header__secondnav__membersoptions__item" to="#">
-          New profile Posts
-        </RouterLink>
-        <RouterLink class="header__secondnav__membersoptions__item" to="#">
-          Search profile posts
-        </RouterLink>
-      </nav>
     </div>
+    <nav ref="membersoptions" class="header__secondnav__membersoptions">
+      <RouterLink class="header__secondnav__membersoptions__item" to="#">
+        Registered members
+      </RouterLink>
+      <RouterLink class="header__secondnav__membersoptions__item" to="#">
+        Current visitors
+      </RouterLink>
+      <RouterLink class="header__secondnav__membersoptions__item" to="#">
+        New profile Posts
+      </RouterLink>
+      <RouterLink class="header__secondnav__membersoptions__item" to="#">
+        Search profile posts
+      </RouterLink>
+    </nav>
   </header>
 </template>
 
