@@ -5,26 +5,48 @@
       <span class="header__logodiv__vue"> Vue </span>
     </div>
     <nav class="header__firstnav">
-      <RouterLink class="header__firstnav__item" to="#" @click="ShowForumnav"
-        >FORUMS</RouterLink
-      >
-      <RouterLink class="header__firstnav__item" to="#">BLOG</RouterLink>
-      <RouterLink class="header__firstnav__item" to="#"
-        >WHAT'S NEW
-        <font-awesome-icon
-          class="header__firstnav__arrowicon"
-          icon="fa-solid fa-caret-down"
-          @click="ShowWhatsnew"
+      <div class="header__firstnav__linksdiv">
+        <RouterLink class="header__firstnav__item" to="#">FORUMS</RouterLink>
+        <RouterLink class="header__firstnav__item" to="#">BLOG</RouterLink>
+        <RouterLink class="header__firstnav__item" to="#"
+          >WHAT'S NEW
+          <font-awesome-icon
+            class="header__firstnav__arrowicon"
+            icon="fa-solid fa-caret-down"
+            @click="ShowWhatsnew"
+          />
+        </RouterLink>
+        <RouterLink class="header__firstnav__item" to="#"
+          >MEMBERS
+          <font-awesome-icon
+            class="header__firstnav__arrowicon"
+            icon="fa-solid fa-caret-down"
+            @click="ShowMembersOptions"
+          />
+        </RouterLink>
+      </div>
+
+      <div class="header__firstnav__userinfodiv">
+        <img
+          src="../assets/img/mr-anonymous.png"
+          alt="Anonymous profile pic"
+          class="header__firstnav__userprofilepic"
         />
-      </RouterLink>
-      <RouterLink class="header__firstnav__item" to="#"
-        >MEMBERS
-        <font-awesome-icon
-          class="header__firstnav__arrowicon"
-          icon="fa-solid fa-caret-down"
-          @click="ShowMembersOptions"
-        />
-      </RouterLink>
+        <span class="header__firstnav__username"> Username </span>
+        <div class="header__firstnav__searchboxdiv">
+          <input
+            class="header__firstnav__searchbox"
+            type="text"
+            placeholder="Search..."
+          />
+          <button class="header__firstnav__searchbox__glassbtn">
+            <font-awesome-icon
+              class="header__firstnav__searchbox__glassbtn__icon"
+              icon="fa-solid fa-magnifying-glass"
+            />
+          </button>
+        </div>
+      </div>
     </nav>
     <div ref="whatsnewoptions" class="header__firstnav__whatsnewdiv">
       <RouterLink class="header__firstnav__whatsnewdiv__item" to="#"
@@ -71,7 +93,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
-const forumsecondnavdiv = ref(null);
 const whatsnewoptions = ref(null);
 const membersoptions = ref(null);
 
@@ -91,18 +112,7 @@ const ShowMembersOptions = () => {
   }
 };
 
-const ShowForumnav = () => {
-  if (forumsecondnavdiv.value.style.display === "none") {
-    membersoptions.value.style.marginTop = "-3.2rem"
-    forumsecondnavdiv.value.style.display = "flex";
-  } else {
-    membersoptions.value.style.marginTop = "0.2rem"
-    forumsecondnavdiv.value.style.display = "none";
-  }
-};
-
 onMounted(() => {
-  forumsecondnavdiv.value.style.display = "none";
   whatsnewoptions.value.style.display = "none";
   membersoptions.value.style.display = "none";
 });
@@ -115,11 +125,68 @@ onMounted(() => {
     display: flex;
     padding-left: 3rem;
     padding-top: 1rem;
+    justify-content: space-between;
+    &__searchboxdiv {
+      display: flex;
+    }
+    &__searchbox {
+      margin-bottom: 0.5rem;
+      border-radius: 5px 0px 0px 5px;
+      outline: none;
+      padding-left: 0.5rem;
+      border: none;
+      border: 1px solid #42464d;
+      background-color: #42464d;
+      &__glassbtn {
+        color: white;
+        border: none;
+        margin-right: 2rem;
+        background-color: #42464d;
+        height: 2.2rem;
+        font-size: 1.1rem;
+        padding-right: 1rem;
+        border-radius: 0px 5px 5px 0px;
+        &__icon {
+          background-color: #42464d;
+
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &::placeholder {
+        color: rgba(white, 0.7);
+        transition: ease-in color 0.2s;
+      }
+      &:focus {
+        &::placeholder {
+          color: white;
+        }
+      }
+    }
+    &__username {
+      color: rgba(white, 0.7);
+      margin-top: 0.5rem;
+    }
+    &__userinfodiv {
+      display: flex;
+      gap: 1rem;
+    }
+    &__userprofilepic {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 0.7rem;
+    }
     &__item {
       background-color: #2d3238;
       padding: 1rem;
       text-decoration: none;
       color: rgba(white, 0.7);
+      &:nth-child(1) {
+        background-color: #42464d;
+        border-radius: 5px 5px 0px 0px;
+        padding-bottom: 2rem;
+      }
       &:nth-child(3) {
         &:focus {
           background-color: #2d3238;
@@ -170,8 +237,8 @@ onMounted(() => {
   }
   &__secondnav {
     font-family: Raleway;
-    padding-left: 3rem;
     padding-top: 1rem;
+    padding-left: 3rem;
     display: flex;
     background-color: #42464d;
     gap: 1rem;
@@ -187,6 +254,7 @@ onMounted(() => {
       position: absolute;
       padding: 1rem;
       background-color: #383c42;
+      margin-top: -3.2rem;
       &__item {
         background-color: #383c42;
         font-family: Quicksand;
