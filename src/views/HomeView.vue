@@ -1,12 +1,15 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <main>
+  <main class="main">
+    <ForumDivisions Title="Título">teste</ForumDivisions>
   </main>
 </template>
 
-<style lang="scss" scoped>
+<script lang="ts">
+import ForumDivisions from "@/components/ForumDivisions.vue";
 
+export default {
+  setup() {},
+};
+</script>
 
-</style>
+<style lang="scss" scoped></style>

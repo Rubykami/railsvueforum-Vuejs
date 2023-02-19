@@ -1,31 +1,35 @@
 <template>
   <header class="header">
-    <div class="header__logodiv">
+    <section class="header__logodiv">
       <span class="header__logodiv__rails"> Rails </span>
       <span class="header__logodiv__vue"> Vue </span>
-    </div>
+    </section>
     <nav class="header__firstnav">
       <div class="header__firstnav__linksdiv">
-        <RouterLink class="header__firstnav__item" to="#">FORUMS</RouterLink>
-        <RouterLink class="header__firstnav__item" to="#">BLOG</RouterLink>
-        <RouterLink class="header__firstnav__item" to="#"
-          >WHAT'S NEW
+        <Link
+          v-for="Link in HeaderFirsNavLinksArray"
+          :key="Link.id"
+          :To="Link.to"
+          :Text="Link.Text"
+          :Class="Link.class"
+        />
+        <Link Class="header__firstnav__item" To="#">
+          WHAT'S NEW
           <font-awesome-icon
             class="header__firstnav__arrowicon"
             icon="fa-solid fa-caret-down"
             @click="ShowWhatsnew"
           />
-        </RouterLink>
-        <RouterLink class="header__firstnav__item" to="#"
-          >MEMBERS
+        </Link>
+        <Link Class="header__firstnav__item" To="#">
+          MEMBERS
           <font-awesome-icon
             class="header__firstnav__arrowicon"
             icon="fa-solid fa-caret-down"
             @click="ShowMembersOptions"
           />
-        </RouterLink>
+        </Link>
       </div>
-
       <div class="header__firstnav__userinfodiv">
         <img
           src="../assets/img/mr-anonymous.png"
@@ -49,49 +53,38 @@
       </div>
     </nav>
     <div ref="whatsnewoptions" class="header__firstnav__whatsnewdiv">
-      <RouterLink class="header__firstnav__whatsnewdiv__item" to="#"
-        >New Profile Posts</RouterLink
-      >
+      <Link
+        Class="header__firstnav__whatsnewdiv__item"
+        To="#"
+        Text="New Profile Posts"
+      />
     </div>
     <div class="header__secondnav__div" ref="forumsecondnavdiv">
-      <nav class="header__secondnav">
-        <RouterLink class="header__secondnav__item" to="#">
-          Trending</RouterLink
-        >
-        <RouterLink class="header__secondnav__item" to="#">
-          Find Threads</RouterLink
-        >
-        <RouterLink class="header__secondnav__item" to="#"> Watched</RouterLink>
-        <RouterLink class="header__secondnav__item" to="#">
-          Search Forums</RouterLink
-        >
-        <RouterLink class="header__secondnav__item" to="#">
-          Mark Forums read</RouterLink
-        >
-        <RouterLink class="header__secondnav__item" to="#">
-          History
-        </RouterLink>
+      <nav ref="header__secondnav" class="header__secondnav">
+        <Link
+          v-for="Link in HeaderSecondNavLinksArray"
+          :key="Link.id"
+          :To="Link.to"
+          :Class="Link.class"
+          :Text="Link.Text"
+        />
       </nav>
     </div>
     <nav ref="membersoptions" class="header__secondnav__membersoptions">
-      <RouterLink class="header__secondnav__membersoptions__item" to="#">
-        Registered members
-      </RouterLink>
-      <RouterLink class="header__secondnav__membersoptions__item" to="#">
-        Current visitors
-      </RouterLink>
-      <RouterLink class="header__secondnav__membersoptions__item" to="#">
-        New profile Posts
-      </RouterLink>
-      <RouterLink class="header__secondnav__membersoptions__item" to="#">
-        Search profile posts
-      </RouterLink>
+      <Link
+        v-for="Link in HeaderSecondNavMemberOptionsLinksArray"
+        :key="Link.id"
+        :Class="Link.class"
+        :To="Link.to"
+        :Text="Link.Text"
+      />
     </nav>
   </header>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+import Link from "./Link.vue";
 
 const whatsnewoptions = ref(null);
 const membersoptions = ref(null);
@@ -116,6 +109,88 @@ onMounted(() => {
   whatsnewoptions.value.style.display = "none";
   membersoptions.value.style.display = "none";
 });
+
+const HeaderSecondNavLinksArray = [
+  {
+    class: "header__secondnav__item",
+    to: "#",
+    Text: "Trending",
+    id: 1,
+  },
+  {
+    class: "header__secondnav__item",
+    to: "#",
+    Text: "Find Threads",
+    id: 2,
+  },
+  {
+    class: "header__secondnav__item",
+    to: "#",
+    Text: "Watched",
+    id: 3,
+  },
+  {
+    class: "header__secondnav__item",
+    to: "#",
+    Text: "Search",
+    id: 4,
+  },
+  {
+    class: "header__secondnav__item",
+    to: "#",
+    Text: "Mark Forums",
+    id: 5,
+  },
+  {
+    class: "header__secondnav__item",
+    to: "#",
+    Text: "History",
+    id: 6,
+  },
+];
+
+const HeaderSecondNavMemberOptionsLinksArray = [
+  {
+    class: "header__secondnav__membersoptions__item",
+    to: "#",
+    Text: "Registered members",
+    id: 1,
+  },
+  {
+    class: "header__secondnav__membersoptions__item",
+    to: "#",
+    Text: "Current visitors",
+    id: 2,
+  },
+  {
+    class: "header__secondnav__membersoptions__item",
+    to: "#",
+    Text: "New profile posts",
+    id: 3,
+  },
+  {
+    class: "header__secondnav__membersoptions__item",
+    to: "#",
+    Text: "Search profile posts",
+    id: 4,
+  },
+];
+
+const HeaderFirsNavLinksArray = [
+  {
+    class: "header__firstnav__item",
+    to: "#",
+    Text: "FORUMS",
+    id: 1,
+  },
+  {
+    class: "header__firstnav__item",
+    to: "#",
+    Text: "BLOG",
+    id: 2,
+  }
+];
+
 </script>
 
 <style scoped lang="scss">
@@ -148,7 +223,6 @@ onMounted(() => {
         border-radius: 0px 5px 5px 0px;
         &__icon {
           background-color: #42464d;
-
         }
         &:hover {
           cursor: pointer;
