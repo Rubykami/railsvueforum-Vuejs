@@ -1,6 +1,10 @@
 <template>
   <main class="main">
-    <ForumDivisions Title="Título">teste</ForumDivisions>
+    <ForumDivisions Title="Announcements">
+      <template v-slot:singletext>
+        Forums News
+      </template>
+      </ForumDivisions>
   </main>
 </template>
 
@@ -12,4 +16,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main {
+  height: 50rem;
+}
+</style>
