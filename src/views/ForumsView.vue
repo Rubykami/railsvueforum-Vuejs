@@ -1,10 +1,12 @@
 <template>
   <main class="main">
-    <ForumDivisions Title="Announcements">
-      <template v-slot:singletext>
-        Forums News
-      </template>
-      </ForumDivisions>
+    <ForumDivisions :Hidden="false" Title="Announcements">
+      <template v-slot:singlelink> Forums News </template>
+    </ForumDivisions>
+    <ForumDivisions :Hidden="true" Title="Discussion">
+      <template v-slot:firstmultilink> Off-Topic </template>
+      <template v-slot:secondmultilink> Site Problems / Ideas </template>
+    </ForumDivisions>
   </main>
 </template>
 
@@ -12,7 +14,9 @@
 import ForumDivisions from "@/components/ForumDivisions.vue";
 
 export default {
-  setup() {},
+  setup() {
+
+  },
 };
 </script>
 
