@@ -1,8 +1,8 @@
 <template>
   <header class="header">
     <section class="header__logodiv">
-      <span class="header__logodiv__rails"> Rails </span>
-      <span class="header__logodiv__vue"> Vue </span>
+      <span class="header__logodiv__anime"> Anime </span>
+      <span class="header__logodiv__zone"> Zone </span>
     </section>
     <nav class="header__firstnav">
       <div class="header__firstnav__linksdiv">
@@ -86,8 +86,8 @@
 import { onMounted, ref } from "vue";
 import Link from "./Link.vue";
 
-const whatsnewoptions = ref(null);
-const membersoptions = ref(null);
+const whatsnewoptions: any = ref(null);
+const membersoptions: any = ref(null);
 
 const ShowWhatsnew = () => {
   if (whatsnewoptions.value.style.display === "none") {
@@ -188,9 +188,8 @@ const HeaderFirsNavLinksArray = [
     to: "#",
     Text: "BLOG",
     id: 2,
-  }
+  },
 ];
-
 </script>
 
 <style scoped lang="scss">
@@ -355,11 +354,11 @@ const HeaderFirsNavLinksArray = [
     font-size: 4rem;
     background-color: #2d3238;
     display: flex;
-    &__rails {
+    &__anime {
       background-color: #2d3238;
       color: #ff1e00;
     }
-    &__vue {
+    &__zone {
       color: #03c988;
       background-color: #2d3238;
     }

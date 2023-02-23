@@ -75,7 +75,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import ThreadsDivisions from "./ThreadsDivisions.vue";
 
 const props = defineProps({
@@ -97,7 +96,7 @@ const props = defineProps({
 <style lang="scss" scoped>
 .main {
   &__forumdivisionsection {
-    width: 70vw;
+    width: 80vw;
     margin: 1.5rem;
   }
   &__forumdivision__title {
