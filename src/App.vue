@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HeaderComponent from "./components/Header.vue";
+import HeaderComponent from "@/components/Header.vue";
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import HeaderComponent from "./components/Header.vue";
 </template>
 
 <style>
-* {
+html, body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;

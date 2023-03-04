@@ -10,6 +10,7 @@ import ForumThreads from "./components/ForumThreads.vue";
 import ThreadsDivisions from "./components/ThreadsDivisions.vue";
 import ForumStatistics from "./components/ForumStatistics.vue";
 import LatestPosts from "./components/Latestposts.vue";
+import Register from "./views/Register.vue";
 
 
 const app = createApp(App).component("font-awesome-icon", FontAwesomeIcon);
@@ -20,5 +21,6 @@ app.component("ForumThreads", ForumThreads);
 app.component("ThreadsDivisions", ThreadsDivisions);
 app.component("ForumStatistics", ForumStatistics);
 app.component("LatestPosts", LatestPosts);
+app.component("Register", Register)
 
 app.mount("#app");

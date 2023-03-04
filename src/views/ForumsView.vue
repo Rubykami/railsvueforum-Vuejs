@@ -7,7 +7,7 @@
         :showthirddivision="false"
         Title="Announcements"
       >
-        <template v-slot:firstthread> Forums News </template>
+        <template v-slot:firstthread> Forum News </template>
       </ForumThreads>
 
       <ForumThreads
@@ -20,16 +20,14 @@
           Anime Recomendations
         </template>
         <template v-slot:secondlinethirdmultilink>
-          Ruby on Rails Lessons
+          New anime releases
         </template>
-        <template v-slot:thirdlinethirdmultilink> React.js Lessons </template>
-        <template v-slot:fourthlinethirdmultilink> Vue.js Lessons </template>
+        <template v-slot:thirdlinethirdmultilink> Anime discussion </template>
+        <template v-slot:fourthlinethirdmultilink> Japanese Lessons </template>
         <template v-slot:fifthlinethirdmultilink>
-          Questions about programming in general
+          Questions about anime
         </template>
-        <template v-slot:sixthlinethirdmultilink>
-          About RailsVue Forum
-        </template>
+        <template v-slot:sixthlinethirdmultilink> About AnimeZone Forum </template>
       </ForumThreads>
 
       <ForumThreads
@@ -60,12 +58,20 @@
 import ForumThreads from "@/components/ForumThreads.vue";
 import ForumStatistics from "@/components/ForumStatistics.vue";
 import LatestPosts from "@/components/Latestposts.vue";
-
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .main {
   height: 50rem;
   display: flex;
 }
+.header__firstnav__item {
+  &:nth-child(1) {
+    background-color: #42464d;
+    padding-bottom: 2rem;
+  }
+}
+.header__secondnavforum {
+    display: flex;
+    }
 </style>
