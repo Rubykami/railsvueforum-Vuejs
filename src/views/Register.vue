@@ -12,8 +12,8 @@
       <dt class="main__registerform__div__column">
         <label for="username" class="main__registerform__div__column__label">
           Username:
+          <dfn class="main__registerform__div__column__dfn">Required</dfn>
         </label>
-        <dfn class="main__registerform__div__column__dfn">Required</dfn>
       </dt>
       <dd class="main__registerform__div__row">
         <input
@@ -50,8 +50,8 @@
       <dt class="main__registerform__div__column">
         <label for="password" class="main__registerform__div__column__label">
           Password:
+          <dfn class="main__registerform__div__column__dfn">Required</dfn>
         </label>
-        <dfn class="main__registerform__div__column__dfn">Required</dfn>
       </dt>
       <dd class="main__registerform__div__row">
         <input
@@ -65,14 +65,16 @@
           class="main__registerform__div__row__meterpwd"
           :value="PwdMeterValue"
           min="0"
-          verylow = "5"
+          verylow="5"
           max="50"
           low="10"
           high="25"
           optimum="50"
         />
         <div class="main__registerform__div__row__pwddiv">
-          <span class="main__registerform__div__row__pwddiv__strength">{{ PwdStrength }}</span>
+          <span class="main__registerform__div__row__pwddiv__strength">{{
+            PwdStrength
+          }}</span>
         </div>
       </dd>
     </div>
@@ -192,15 +194,18 @@
           class="main__registerform__div__column__label"
         >
           Verification:
+          <dfn class="main__registerform__div__column__dfn">Required</dfn>
         </label>
-        <dfn class="main__registerform__div__column__dfn">Required</dfn>
       </dt>
       <dd class="main__registerform__div__row">
+        <span class="main__registerform__div__row__question">{{ ValidationQuestion.question }}</span>
         <input
           class="main__registerform__div__row__input"
           type="text"
           name="verification"
           required
+          placeholder="Please answer the question above here"
+          v-model="FormValues.questionanswer"
         />
       </dd>
     </div>
@@ -211,21 +216,19 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, watch  } from "vue";
+import { reactive, watch } from "vue";
 
-let PwdStrength = "Entering a password is required."
+let PwdStrength = "Entering a password is required.";
 
 const PwdStrengthValues = {
   initialvalue: "Entering a password is required.",
   weak: "The chosen password could be stronger.",
   medium: "The chosen password could be stronger.",
   strong: "This is a reasonably strong password.",
-  verystrong: "This is a very strong password."
-}
+  verystrong: "This is a very strong password.",
+};
 
-let PwdMeterValue = 0
-
-
+let PwdMeterValue = 0;
 
 const FormValues = reactive({
   username: "",
@@ -234,35 +237,92 @@ const FormValues = reactive({
   day: "",
   month: "",
   year: "",
+  questionanswer: "",
 });
 
+const RandomNumber = Math.floor(Math.random() * 6);
 
-watch(() => FormValues.password.length, () => {
-  if (FormValues.password.length === 0) {
-    PwdMeterValue = 0
-    PwdStrength = PwdStrengthValues.initialvalue
-  }
-  else if (FormValues.password.length < 11 && FormValues.password.length !== 0) {
-    PwdMeterValue = 5
-    PwdStrength = PwdStrengthValues.weak
-  }
-  else if ( FormValues.password.length > 11 && FormValues.password.length < 20) {
-      PwdMeterValue = 10
-      PwdStrength = PwdStrengthValues.medium
-  }
-  else if ( FormValues.password.length > 20 && FormValues.password.length < 30) {
-      PwdMeterValue = 20
-      PwdStrength = PwdStrengthValues.strong
-  }
-  else if ( FormValues.password.length > 30 && FormValues.password.length < 40) {
-      PwdMeterValue = 50
-      PwdStrength = PwdStrengthValues.verystrong
-  }
-})
+const ValidationArray = [
+  { question: "Which color is the sun?", answer: "Orange", id: 1 },
+  { question: "What number comes next? 1,2,3,4...", answer: "5", id: 2 },
+  { question: "What is 1 plus 1?", answer: "2", id: 3 },
+  {
+    question: "What are the last 3 letters in the word: keyboard?",
+    answer: "ard",
+    id: 4,
+  },
+  { question: "What color is the sky?", answer: "blue", id: 5 },
+];
 
+const ValidationQuestion = ValidationArray[RandomNumber];
 
-const SubmitForm = (event: any) => {};
+watch(
+  () => FormValues.password.length,
+  () => {
+    if (FormValues.password.length === 0) {
+      PwdMeterValue = 0;
+      PwdStrength = PwdStrengthValues.initialvalue;
+    } else if (
+      FormValues.password.length < 11 &&
+      FormValues.password.length !== 0
+    ) {
+      PwdMeterValue = 5;
+      PwdStrength = PwdStrengthValues.weak;
+    } else if (
+      FormValues.password.length > 11 &&
+      FormValues.password.length < 20
+    ) {
+      PwdMeterValue = 10;
+      PwdStrength = PwdStrengthValues.medium;
+    } else if (
+      FormValues.password.length > 20 &&
+      FormValues.password.length < 30
+    ) {
+      PwdMeterValue = 20;
+      PwdStrength = PwdStrengthValues.strong;
+    } else if (
+      FormValues.password.length > 30 &&
+      FormValues.password.length < 40
+    ) {
+      PwdMeterValue = 50;
+      PwdStrength = PwdStrengthValues.verystrong;
+    }
+  }
+);
 
+const SubmitForm = (event: any) => {
+  switch (ValidationQuestion.question) {
+    case ValidationArray[0].question:
+      if (FormValues.questionanswer !== ValidationArray[0].answer) {
+        alert("Incorrect Answer, please try again!");
+        window.location.reload();
+      }
+    case ValidationArray[1].question:
+      if (FormValues.questionanswer !== ValidationArray[1].answer) {
+        alert("Incorrect Answer, please try again!");
+        window.location.reload();
+      }
+      break;
+    case ValidationArray[2].question:
+      if (FormValues.questionanswer !== ValidationArray[2].answer) {
+        alert("Incorrect Answer, please try again!");
+        window.location.reload();
+      }
+      break;
+    case ValidationArray[3].question:
+      if (FormValues.questionanswer !== ValidationArray[3].answer) {
+        alert("Incorrect Answer, please try again!");
+        window.location.reload();
+      }
+      break;
+    case ValidationArray[4].question:
+      if (FormValues.questionanswer !== ValidationArray[4].answer) {
+        alert("Incorrect Answer, please try again!");
+        window.location.reload();
+      }
+      break;
+  }
+};
 </script>
 
 <style lang="scss">
@@ -328,7 +388,7 @@ const SubmitForm = (event: any) => {};
         border-right: 1px solid rgba(255, 255, 255, 0.12);
         padding-right: 1rem;
         padding-top: 2rem;
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
         color: white;
         display: flex;
         flex-direction: column;
@@ -345,6 +405,20 @@ const SubmitForm = (event: any) => {};
       }
       &__row {
         align-self: center;
+          padding-bottom: 2rem;
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          &__question {
+            padding-top: 0.5rem;
+            padding-bottom: 1rem;
+          }
+        &__input {
+          &::placeholder {
+            font-size: 1rem;
+            font-family: Roboto;
+          }
+        }
         &__pwddiv {
           &__strength {
             margin-top: 5px;
