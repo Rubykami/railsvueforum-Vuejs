@@ -22,6 +22,7 @@
           name="username"
           required
           v-model="FormValues.username"
+          autofocus
         />
         <dfn class="main__registerform__div__row__dfn"
           >This is the name that will be shown with your messages. You may use
@@ -39,7 +40,8 @@
       <dd class="main__registerform__div__row">
         <input
           class="main__registerform__div__row__input"
-          type="text"
+          type="email"
+          autocomplete="off"
           name="email"
           required
           v-model="FormValues.email"
@@ -198,7 +200,9 @@
         </label>
       </dt>
       <dd class="main__registerform__div__row">
-        <span class="main__registerform__div__row__question">{{ ValidationQuestion.question }}</span>
+        <span class="main__registerform__div__row__question">{{
+          ValidationQuestion.question
+        }}</span>
         <input
           class="main__registerform__div__row__input"
           type="text"
@@ -207,6 +211,14 @@
           placeholder="Please answer the question above here"
           v-model="FormValues.questionanswer"
         />
+        <div class="main__registerform__div__row__termsprivacy">
+          <input
+            type="checkbox"
+            required
+            class="main__registerform__div__row__termsprivacy__checkbox"
+          />
+          <span class="main__registerform__div__row__termsprivacy__conditions"> I agree to the <RouterLink to="/help/terms/" class="main__registerform__div__row__termsprivacy__links"> terms </RouterLink>and <RouterLink to="/help/privacy-policy/" class="main__registerform__div__row__termsprivacy__links"> privacy </RouterLink> policy. </span>
+        </div>
       </dd>
     </div>
     <footer class="main__registerform__footer">
@@ -254,7 +266,7 @@ const ValidationArray = [
   { question: "What color is the sky?", answer: "blue", id: 5 },
 ];
 
-const ValidationQuestion = ValidationArray[RandomNumber];
+const ValidationQuestion = ValidationArray[RandomNumber] || ""
 
 watch(
   () => FormValues.password.length,
@@ -293,34 +305,43 @@ watch(
 const SubmitForm = (event: any) => {
   switch (ValidationQuestion.question) {
     case ValidationArray[0].question:
-      if (FormValues.questionanswer !== ValidationArray[0].answer) {
+      if (FormValues.questionanswer !== ValidationArray[0].answer.toLowerCase()) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
     case ValidationArray[1].question:
-      if (FormValues.questionanswer !== ValidationArray[1].answer) {
+      if (FormValues.questionanswer !== ValidationArray[1].answer.toLowerCase()) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
       break;
     case ValidationArray[2].question:
-      if (FormValues.questionanswer !== ValidationArray[2].answer) {
+      if (FormValues.questionanswer !== ValidationArray[2].answer.toLowerCase()) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
       break;
     case ValidationArray[3].question:
-      if (FormValues.questionanswer !== ValidationArray[3].answer) {
+      if (FormValues.questionanswer !== ValidationArray[3].answer.toLowerCase()) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
       break;
     case ValidationArray[4].question:
-      if (FormValues.questionanswer !== ValidationArray[4].answer) {
+      if (FormValues.questionanswer !== ValidationArray[4].answer.toLowerCase()) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
       break;
+  }
+
+  if (typeof(FormValues.day) !== "number") {
+    alert("Incorrect day value, please type an number and try again!");
+        window.location.reload();
+  }
+  else if (typeof(FormValues.month) !== "number") {
+    alert("Incorrect month value, please type an number and try again!");
+        window.location.reload();
   }
 };
 </script>
@@ -405,15 +426,35 @@ const SubmitForm = (event: any) => {
       }
       &__row {
         align-self: center;
-          padding-bottom: 2rem;
-          margin-top: 2rem;
-          display: flex;
-          flex-direction: column;
-          &__question {
-            padding-top: 0.5rem;
-            padding-bottom: 1rem;
+        padding-bottom: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        font-family: Roboto;
+        &__termsprivacy {
+          padding-top: 1rem;
+          font-family: roboto;
+          &__conditions {
+
           }
+          &__links {
+            color: #2196F3;
+            text-decoration: none;
+          }
+          &__checkbox {
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+        &__question {
+          font-size: 1rem;
+          padding-top: 0.5rem;
+          padding-bottom: 1rem;
+        }
         &__input {
+          font-size: 1rem;
+          font-family: Roboto;
           &::placeholder {
             font-size: 1rem;
             font-family: Roboto;
@@ -421,9 +462,10 @@ const SubmitForm = (event: any) => {
         }
         &__pwddiv {
           &__strength {
+            font-size: 1rem;
+            font-family: Roboto;
             margin-top: 5px;
             display: block;
-            font-family: Raleway;
             font-size: 0.9rem;
           }
         }
