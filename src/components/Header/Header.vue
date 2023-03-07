@@ -32,7 +32,7 @@
       </div>
       <div class="header__firstnav__userinfodiv">
         <img
-          src="../assets/img/mr-anonymous.png"
+          src="../../assets/img/mr-anonymous.png"
           alt="Anonymous profile pic"
           class="header__firstnav__userprofilepic"
         />
@@ -84,7 +84,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import Link from "./Link.vue";
+import Link from "../Link/Link.vue";
 
 
 const whatsnewoptions: any = ref(null);
@@ -197,177 +197,4 @@ const HeaderFirsNavLinksArray = [
 ];
 </script>
 
-<style lang="scss">
-.header {
-  margin-top: 0.5rem;
-  &__firstnav {
-    font-family: Quicksand;
-    display: flex;
-    padding-left: 3rem;
-    padding-top: 1rem;
-    justify-content: space-between;
-    &__searchboxdiv {
-      display: flex;
-    }
-    &__searchbox {
-      margin-bottom: 0.5rem;
-      border-radius: 5px 0px 0px 5px;
-      outline: none;
-      padding-left: 0.5rem;
-      border: none;
-      border: 1px solid #42464d;
-      background-color: #42464d;
-      &__glassbtn {
-        color: white;
-        border: none;
-        margin-right: 2rem;
-        background-color: #42464d;
-        height: 2.2rem;
-        font-size: 1.1rem;
-        padding-right: 1rem;
-        border-radius: 0px 5px 5px 0px;
-        &__icon {
-          background-color: #42464d;
-        }
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      &::placeholder {
-        color: rgba(white, 0.7);
-        transition: ease-in color 0.2s;
-      }
-      &:focus {
-        &::placeholder {
-          color: white;
-        }
-      }
-    }
-    &__username {
-      color: rgba(white, 0.7);
-      margin-top: 0.5rem;
-    }
-    &__userinfodiv {
-      display: flex;
-      gap: 1rem;
-    }
-    &__userprofilepic {
-      width: 2rem;
-      height: 2rem;
-      margin-bottom: 0.7rem;
-    }
-    &__item {
-      background-color: #2d3238;
-      padding: 1rem;
-      text-decoration: none;
-      color: rgba(white, 0.7);
-      &:nth-child(1) {
-        background-color: #42464d;
-        border-radius: 5px 5px 0px 0px;
-        padding-bottom: 2rem;
-      }
-      &:nth-child(3) {
-        &:focus {
-          background-color: #2d3238;
-        }
-      }
-      &:nth-child(4) {
-        &:focus {
-          background-color: #2d3238;
-        }
-      }
-      &:hover {
-        color: white;
-      }
-    }
-    &__arrowicon {
-      background-color: #2d3238;
-      color: rgba(darkgray, 0.5);
-      &:nth-child(1) {
-        background-color: #2d3238;
-      }
-      &:hover {
-        color: white;
-      }
-    }
-    &__whatsnewdiv {
-      border-radius: 5px 5px 5px 5px;
-      padding: 0.5rem;
-      padding-right: 1rem;
-      position: absolute;
-      font-family: Raleway;
-      margin-left: 13.8rem;
-      font-size: 0.9rem;
-      background-color: #383c42;
-      border-top: 1px solid gray;
-      display: none;
-      &:hover {
-        cursor: pointer;
-      }
-      &__item {
-        background-color: #383c42;
-        text-decoration: none;
-        color: white;
-        &:hover {
-          color: #03c988;
-        }
-      }
-    }
-  }
-  &__secondnavforum {
-    font-family: Raleway;
-    padding-top: 1rem;
-    padding-left: 3rem;
-    display: flex;
-    background-color: #42464d;
-    gap: 1rem;
-    width: 100vw;
-    &__membersoptions {
-      z-index: 10;
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      border-radius: 5px 5px 5px 5px;
-      margin-left: 22.6rem;
-      border-top: 1px solid gray;
-      position: absolute;
-      padding: 1rem;
-      background-color: #383c42;
-      margin-top: -3.2rem;
-      &__item {
-        background-color: #383c42;
-        font-family: Quicksand;
-        color: rgba(white, 0.7);
-        text-decoration: none;
-        &:hover {
-          color: white;
-        }
-      }
-    }
-    &__item {
-      text-decoration: none;
-      background-color: #42464d;
-      padding-bottom: 1rem;
-      color: rgba(white, 0.7);
-      &:hover {
-        color: white;
-      }
-    }
-  }
-  &__logodiv {
-    padding-left: 2rem;
-    font-family: Flamenco;
-    font-size: 4rem;
-    background-color: #2d3238;
-    display: flex;
-    &__anime {
-      background-color: #2d3238;
-      color: #ff1e00;
-    }
-    &__world {
-      color: #03c988;
-      background-color: #2d3238;
-    }
-  }
-}
-</style>
+<style lang="scss" src="./styles.scss" />

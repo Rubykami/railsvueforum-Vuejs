@@ -25,4 +25,4 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<styl lang="scss" scoped src="./styles.scss" />

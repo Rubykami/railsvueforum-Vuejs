@@ -1,0 +1,30 @@
+@import "../../assets//scss/global.scss";
+
+.footer {
+    background-color: $DarkerBackgroundColor;
+    border: 1px solid $DarkerBorderColor;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: $RegularFontSize;
+    &__madewith {
+        margin-left: 10vw;
+        color: $DarkerFontColor;
+
+    }
+    &__links {
+        display: flex;
+        gap: 3rem;
+        margin-right: 10vw;
+        &__item {
+            text-decoration: none;
+            color: $DarkerFontColor;
+            &:hover {
+                cursor: pointer;
+                color: $LighterFontColor;
+            }
+        }
+    }
+}

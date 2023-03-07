@@ -1,0 +1,34 @@
+@import "../../assets/scss//colors.scss";
+
+.main__latestpostssection {
+    margin-top: 1rem;
+    &__title {
+        border-radius: 5px 5px 0px 0px;
+        padding: 1rem;
+        background-color: $DarkBackgroundColor;
+        border-bottom: 1px solid $LighterBorderColor;
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 0rem;
+        &__text {
+            background-color: $DarkBackgroundColor;
+            color: $LighterFontColor;
+        }
+        &__icon {
+            background-color: $DarkBackgroundColor;
+            color: $LighterFontColor;
+        }
+    }
+    &__postsdiv {
+        border-radius: 5px 5px 5px 5px;
+        padding: 1rem;
+        background-color: $DarkBackgroundColor;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        color: $LighterFontColor;
+        &__post {
+            background-color: $DarkBackgroundColor;
+        }
+    }
+}

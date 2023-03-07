@@ -1,0 +1,94 @@
+@import "../../assets/scss/global.scss";
+
+
+.main__forumstatisticssection {
+    border: 1px solid $DarkBackgroundColor;
+    margin-top: 1rem;
+    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+    
+    &__title {
+      background-color: $DarkBackgroundColor;
+      display: flex;
+      gap: 0.7rem;
+      width: 15rem;
+      padding: 0.5rem;
+      padding-left: 1rem;
+      color: $LighterFontColor;
+      border-bottom: 1px solid $LighterFontColor;
+      margin-bottom: 0rem;
+      margin-top: 0rem;
+      &__spantext {
+          background-color: $DarkBackgroundColor;
+      }
+      &__icon {
+        color: $GrayColor;
+        background-color: $DarkBackgroundColor;
+      }
+    }
+    &__threadsdiv {
+      background-color: $DarkBackgroundColor;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      color: $LighterFontColor;
+      padding-top: 1rem;
+      &__threadstext {
+          background-color: $DarkBackgroundColor;
+          color: $DarkerFontColor;
+      }
+      &__threadsvalue {
+          background-color: $DarkBackgroundColor;
+      }
+    }
+    &__membersdiv {
+      background-color: $DarkBackgroundColor;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      color: $LighterFontColor;
+      &__memberstext {
+          background-color: $DarkBackgroundColor;
+          color: $DarkerFontColor;
+      }
+      &__membersvalue {
+          background-color: $DarkBackgroundColor;
+      }
+    }
+    &__latestmemberdiv {
+      background-color: $DarkBackgroundColor;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      color: $LighterFontColor;
+      padding-bottom: 1rem;
+      &__latestmembertext {
+          background-color: $DarkBackgroundColor;
+          color: $DarkerFontColor;
+      }
+      &__latestmembername {
+          background-color: $DarkBackgroundColor;
+      }
+    }
+    &__postsdiv {
+      background-color: $DarkBackgroundColor;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      color: $LighterFontColor;
+      &__poststext {
+          background-color: $DarkBackgroundColor;
+          color: $DarkerFontColor;
+      }
+      &__postsvalue {
+          background-color: $DarkBackgroundColor;
+      }
+    }
+  }

@@ -1,0 +1,174 @@
+@import "../../assets//scss//global.scss";
+
+.header {
+    margin-top: 0.5rem;
+    &__firstnav {
+        font-family: Quicksand;
+        display: flex;
+        padding-left: 3rem;
+        padding-top: 1rem;
+        justify-content: space-between;
+        &__searchboxdiv {
+            display: flex;
+        }
+        &__searchbox {
+            margin-bottom: 0.5rem;
+            border-radius: 5px 0px 0px 5px;
+            outline: none;
+            padding-left: 0.5rem;
+            border: none;
+            border: 1px solid $DarkBackgroundColor;
+            background-color: $DarkBackgroundColor;
+            &__glassbtn {
+                color: $LighterFontColor;
+                border: none;
+                margin-right: 2rem;
+                background-color: $DarkBackgroundColor;
+                height: 2.2rem;
+                font-size: $GreaterFontSize;
+                padding-right: 1rem;
+                border-radius: 0px 5px 5px 0px;
+                &__icon {
+                    background-color: $DarkBackgroundColor;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            &::placeholder {
+                color: $DarkerFontColor;
+                transition: ease-in color 0.2s;
+            }
+            &:focus {
+                &::placeholder {
+                    color: $LighterFontColor;
+                }
+            }
+        }
+        &__username {
+            color: $DarkerFontColor;
+            margin-top: 0.5rem;
+        }
+        &__userinfodiv {
+            display: flex;
+            gap: 1rem;
+        }
+        &__userprofilepic {
+            width: 2rem;
+            height: 2rem;
+            margin-bottom: 0.7rem;
+        }
+        &__item {
+            background-color: $DarkestBackgroundColor;
+            padding: 1rem;
+            text-decoration: none;
+            color: $DarkerFontColor;
+            &:nth-child(1) {
+                background-color: $DarkBackgroundColor;
+                border-radius: 5px 5px 0px 0px;
+                padding-bottom: 2rem;
+            }
+            &:nth-child(3) {
+                &:focus {
+                    background-color: $DarkestBackgroundColor;
+                }
+            }
+            &:nth-child(4) {
+                &:focus {
+                    background-color: $DarkestBackgroundColor;
+                }
+            }
+            &:hover {
+                color: $LighterFontColor;
+            }
+        }
+        &__arrowicon {
+            background-color: $DarkestBackgroundColor;
+            color: $DarkestFontColor;
+            &:nth-child(1) {
+                background-color: $DarkestBackgroundColor;
+            }
+            &:hover {
+                color: $LighterFontColor;
+            }
+        }
+        &__whatsnewdiv {
+            border-radius: 5px 5px 5px 5px;
+            padding: 0.5rem;
+            padding-right: 1rem;
+            position: absolute;
+            font-family: Raleway;
+            margin-left: 13.8rem;
+            font-size: 0.9rem;
+            background-color: $DarkerBackgroundColor;
+            border-top: 1px solid $DarkerBorderColor;
+            display: none;
+            &:hover {
+                cursor: pointer;
+            }
+            &__item {
+                background-color: $DarkerBackgroundColor;
+                text-decoration: none;
+                color: $LighterFontColor;
+                &:hover {
+                    color: $GreenColor;
+                }
+            }
+        }
+    }
+    &__secondnavforum {
+        font-family: Raleway;
+        padding-top: 1rem;
+        padding-left: 2rem;
+        display: flex;
+        background-color: $DarkBackgroundColor;
+        gap: 1rem;
+        width: 100vw;
+        &__membersoptions {
+            z-index: 10;
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            border-radius: 5px 5px 5px 5px;
+            margin-left: 22.6rem;
+            border-top: 1px solid $DarkerBorderColor;
+            position: absolute;
+            padding: 1rem;
+            background-color: $DarkerBackgroundColor;
+            margin-top: -3.2rem;
+            &__item {
+                background-color: $DarkerBackgroundColor;
+                font-family: Quicksand;
+                color: $DarkerFontColor;
+                text-decoration: none;
+                &:hover {
+                    color: $LighterFontColor;
+                }
+            }
+        }
+        &__item {
+            text-decoration: none;
+            background-color: $DarkBackgroundColor;
+            padding-bottom: 1rem;
+            color: $DarkerFontColor;
+            &:hover {
+                color: $LighterFontColor;
+            }
+        }
+    }
+    &__logodiv {
+        padding-left: 2rem;
+        font-family: Flamenco;
+        font-size: $GreatestFontSize;
+        background-color: $DarkestBackgroundColor;
+        display: flex;
+        &__anime {
+            background-color: $DarkestBackgroundColor;
+            color: $RedColor;
+        }
+        &__world {
+            color: $GreenColor;
+            background-color: $DarkestBackgroundColor;
+        }
+    }
+}

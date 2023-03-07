@@ -1,0 +1,282 @@
+@import "../../assets/scss/global.scss";
+
+.main {
+    &__forumdivisionsection {
+      width: 78vw;
+      margin: 1.5rem;
+    }
+    &__forumdivision__title {
+      background-color: $LightBlueColor;
+      color: $LighterFontColor;
+      padding: 0.5rem;
+      padding-left: 1rem;
+      font-family: "Roboto";
+      border-radius: 5px 5px 0px 0px;
+      &__text {
+        background-color: $LightBlueColor;
+        font-size: $RegularFontSize;
+        &:hover {
+          border-bottom: 1px solid $LighterFontColor;
+          cursor: pointer;
+        }
+      }
+    }
+    &__forumdivision__firstcontentdiv {
+      color: $LighterFontColor;
+      background-color: $DarkerBackgroundColor;
+      padding: 1.5rem;
+      padding-left: 4rem;
+      font-family: "Roboto";
+      &:hover {
+        .main__forumdivision__firstcontentdiv__content__singlelink {
+          background-color: $LighterDarkBackgroundColor;
+        }
+        .main__forumdivision__secondcontentdiv__content__firstlinesecondmultilink {
+          background-color: $LighterDarkBackgroundColor;
+        }
+        .main__forumdivision__firstcontentdiv__content__firstmultilink {
+                  background-color: $LighterDarkBackgroundColor;
+        }
+        background-color: $LighterDarkBackgroundColor;
+        cursor: pointer;
+      }
+      &__content__firstmultilink {
+        background-color: $DarkerBackgroundColor;
+        color: white;
+        &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          border-bottom: 1px solid white;
+        }
+      }
+      &__content__secondmultilink {
+        background-color: $DarkerBackgroundColor;
+        color: white;
+        font-family: "Roboto";
+        width: 10rem;
+        &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          border-bottom: 1px solid $LighterFontColor;
+          cursor: pointer;
+        }
+      }
+      &__content__singlelink {
+        background-color: $DarkerBackgroundColor;
+        &:hover {
+          border-bottom: 1px solid $LighterFontColor;
+          background-color: $LighterDarkBackgroundColor;
+        }
+      }
+    }
+    &__forumdivision__thirdcontentdiv {
+      color: $LighterFontColor;
+      background-color: $DarkerBackgroundColor;
+      font-family: "Roboto";
+      &__content__firstdiv {
+        padding: 1.5rem;
+        background-color: $DarkerBackgroundColor;
+        padding-left: 4rem;
+        border-bottom: 1px solid transparent;
+        color: $LighterFontColor;        
+        &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          .main__forumdivision__thirdcontentdiv__content__firstdiv__firstlinethirdmultilink {
+            background-color: $LighterDarkBackgroundColor;
+          }
+          cursor: pointer;
+          color: $LighterFontColor;
+        }
+        &__firstlinethirdmultilink {
+          background-color: $DarkerBackgroundColor;
+          text-decoration: none;
+          color: $LighterFontColor;
+          &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          border-bottom: 1px solid $LighterFontColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+          }
+        }
+      }
+      &__content__seconddiv {
+        padding: 1.5rem;
+        padding-left: 4rem;
+        background-color: $DarkBackgroundColor;
+        border-top: 1px solid $DarkerBorderColor;
+        border-bottom: 1px solid $DarkerBorderColor;
+        color: $LighterFontColor;
+        &:hover {
+          .main__forumdivision__thirdcontentdiv__content__seconddiv__secondlinethirdmultilink {
+            background-color: $LighterDarkBackgroundColor;
+          }
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+        }
+        &__secondlinethirdmultilink {
+          background-color: $DarkBackgroundColor;
+        border-bottom: 1px solid transparent;
+        color: $LighterFontColor; 
+        text-decoration: none;       
+        &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+          border-bottom: 1px solid $LighterFontColor;
+        }
+      }
+      }
+      &__content__thirddiv {
+        padding: 1.5rem;
+        background-color: $DarkerBackgroundColor;
+        padding-left: 4rem;
+        border-bottom: 1px solid transparent;
+        color: $LighterFontColor;    
+        &:hover {
+          .main__forumdivision__thirdcontentdiv__content__thirddiv__thirdlinethirdmultilink {
+            background-color: $LighterDarkBackgroundColor;
+          }
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+        }
+        &__thirdlinethirdmultilink {
+          background-color: $DarkerBackgroundColor;
+        border-bottom: 1px solid transparent;
+        color: $LighterFontColor;
+        text-decoration: none;    
+          &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+          border-bottom: 1px solid $LighterFontColor;
+        }
+        }
+      }
+      &__content__fourthdiv {
+        padding: 1.5rem;
+        background-color: $DarkBackgroundColor;
+        border-top: 1px solid $DarkerBorderColor;
+        border-bottom: 1px solid $DarkerBorderColor;
+        padding-left: 4rem;
+        color: $LighterFontColor;     
+        &:hover {
+          .main__forumdivision__thirdcontentdiv__content__fourthdiv__fourthlinethirdmultilink {
+            background-color: $LighterDarkBackgroundColor;
+          }
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+        }
+        &__fourthlinethirdmultilink {
+          background-color: $DarkBackgroundColor;
+        border-bottom: 1px solid transparent;
+        color: $LighterFontColor; 
+        text-decoration: none;    
+          &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+          border-bottom: 1px solid $LighterFontColor;
+        }
+        }
+      }
+      &__content__fifthdiv {
+          padding: 1.5rem;
+        background-color: $DarkerBackgroundColor;
+        padding-left: 4rem;
+        border-bottom: 1px solid transparent;
+        color: $LighterFontColor;      
+        &:hover {
+          .main__forumdivision__thirdcontentdiv__content__fifthdiv__fifthlinethirdmultilink {
+            background-color: $LighterDarkBackgroundColor;
+          }
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+        }
+        &__fifthlinethirdmultilink {
+          background-color: $DarkerBackgroundColor;
+        border-bottom: 1px solid transparent;
+        color: $LighterFontColor;
+        text-decoration: none;    
+          &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+          border-bottom: 1px solid $LighterFontColor;
+        }
+        }
+        }
+        &__content__sixthdiv {
+          padding: 1.5rem;
+          background-color: $DarkBackgroundColor;
+        border-top: 1px solid $DarkerBorderColor;
+        border-bottom: 1px solid $DarkerBorderColor;
+        padding-left: 4rem;
+        border-bottom: 1px solid transparent;
+        color: $LighterFontColor;
+        &:hover {
+          .main__forumdivision__thirdcontentdiv__content__sixthdiv__sixthlinethirdmultilink {
+            background-color: $LighterDarkBackgroundColor;
+          }
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+        }
+        &__sixthlinethirdmultilink {
+          background-color: $DarkBackgroundColor;
+        border-bottom: 1px solid transparent;
+        color: $LighterFontColor;
+        text-decoration: none;    
+          &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          cursor: pointer;
+          color: $LighterFontColor;
+          border-bottom: 1px solid $LighterFontColor;
+        }
+        }
+        }
+    }
+    &__forumdivision__secondcontentdiv {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: $LighterFontColor;
+      background-color: $DarkBackgroundColor;
+        border-top: 1px solid $DarkerBorderColor;
+        border-bottom: 1px solid $DarkerBorderColor;
+      padding: 1.5rem;
+      padding-left: 4rem;
+      font-family: "Roboto";
+      border-radius: 0px 0px 5px 5px;
+      &:hover {
+        background-color: $LighterDarkBackgroundColor;
+        cursor: pointer;
+        .main__forumdivision__secondcontentdiv__content__secondlinesecondmultilink {
+          background-color: $LighterDarkBackgroundColor;
+        }
+        .main__forumdivision__secondcontentdiv__content__firstlinesecondmultilink {
+          background-color: $LighterDarkBackgroundColor;
+        }
+      }
+      &__content__firstlinesecondmultilink {
+        background-color: $DarkBackgroundColor;
+        border-bottom: 1px solid transparent;
+        width: 9.5rem;
+        color: $LighterFontColor;
+        &:hover {
+          background-color: $LighterDarkBackgroundColor;
+          border-bottom: 1px solid $LighterFontColor;
+        }
+      }
+      &__content__secondlinesecondmultilink {
+        background-color: $DarkBackgroundColor;
+        width: 35rem;
+        font-size: 0.8rem;
+        color: $DarkerFontColor;
+        &:hover {
+          background-color: $LighterDarkBackgroundColor;
+        }
+      }
+    }
+  }

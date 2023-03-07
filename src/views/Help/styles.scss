@@ -1,0 +1,80 @@
+@import "../../assets/scss/global.scss";
+
+.main {
+    &__helppagelist {
+        margin-top: 1.5rem;
+        color: $LighterFontColor;
+        display: flex;
+        flex-direction: column;
+        &__content {
+            margin-left: 4rem;
+            width: 14rem;
+            display: flex;
+            flex-direction: column;
+            &__item {
+                font-size: $SmallFontSize;
+                padding: 0.5rem;
+                font-family: "Roboto";
+                text-align: left;
+                padding-left: 1rem;
+                background-color: $DarkBackgroundColor;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                color: $LighterFontColor;
+                &:hover {
+                    background-color: $LighterDarkBackgroundColor;
+                }
+                &:last-child {
+                    padding-bottom: 1rem;
+                    border-radius: 0px 0px 5px 5px;
+                }
+            }
+        }
+        &__title {
+            border-bottom: 1px solid $DarkerBorderColor;
+            font-family: "Roboto";
+            border-radius: 5px 5px 0px 0px;
+            margin-left: 4rem;
+            display: flex;
+            gap: 0.7rem;
+            background-color: $DarkBackgroundColor;
+            width: 12rem;
+            padding: 1rem;
+        }
+    }
+    &__helppagecontent {
+        margin-bottom: 1rem;
+        border-radius: 5px 5px 5px 5px;
+        margin-top: 1.5rem;
+        margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        background-color: $DarkBackgroundColor;
+        &__contentdivision {
+            width: 74vw;
+            color: $LighterFontColor;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid $DarkerBorderColor;
+            padding: 1rem;
+            gap: 0.5rem;
+            &__title {
+                width:fit-content;
+                text-decoration: none;
+                color: $LighterFontColor;
+                font-family: Quicksand;
+                font-weight: bold;
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+            &__link {
+                text-decoration: none;
+                color: $LighterFontColor;
+                font-family: Roboto;
+            }
+        }
+    }
+}

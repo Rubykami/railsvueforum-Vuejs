@@ -55,23 +55,9 @@
 </template>
 
 <script setup lang="ts">
-import ForumThreads from "@/components/ForumThreads.vue";
-import ForumStatistics from "@/components/ForumStatistics.vue";
-import LatestPosts from "@/components/Latestposts.vue";
+import ForumThreads from "@/components/ForumThreads/ForumThreads.vue";
+import ForumStatistics from "@/components/ForumStatistics/ForumStatistics.vue";
+import LatestPosts from "@/components/Latestposts/Latestposts.vue";
 </script>
 
-<style lang="scss">
-.main {
-  height: 50rem;
-  display: flex;
-}
-.header__firstnav__item {
-  &:nth-child(1) {
-    background-color: #42464d;
-    padding-bottom: 2rem;
-  }
-}
-.header__secondnavforum {
-    display: flex;
-    }
-</style>
+<style src="./styles.scss" lang="scss" />

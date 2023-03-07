@@ -20,36 +20,4 @@
 
 <script setup lang="ts"></script>
 
-<style lang="scss" scoped>
-.main__latestpostssection {
-  margin-top: 1rem;
-  &__title {
-    border-radius: 5px 5px 0px 0px;
-    padding: 1rem;
-    background-color: #42464d;
-    border-bottom: 1px solid white;
-    display: flex;
-    gap: 0.5rem;
-    &__text {
-      background-color: #42464d;
-      color: white;
-    }
-    &__icon {
-      background-color: #42464d;
-      color: white;
-    }
-  }
-  &__postsdiv {
-    border-radius: 5px 5px 5px 5px;
-    padding: 1rem;
-    background-color: #42464d;
-    gap: 1rem;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    &__post {
-      background-color: #42464d;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped src="./styles.scss"/>

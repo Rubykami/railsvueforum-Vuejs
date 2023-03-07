@@ -1,0 +1,25 @@
+@import "../../assets/scss/colors.scss";
+
+
+.main {
+    &__welcomesection {
+        font-family: Raleway;
+        text-align: center;
+        margin: auto;
+        width: 90vw;
+        margin-top: 1rem;
+        background-image: url(../../assets/img/background.jpg);
+        border-radius: 5px 5px 5px 5px;
+        padding: 1rem;
+        &__welcome {
+            color: $LighterFontColor;
+            padding: 0.5rem;
+            padding-bottom: 0rem;
+        }
+        &__comesignup {
+            padding: 0.5rem;
+            padding-top: 0rem;
+            color: $LighterFontColor;
+        }
+    }
+}
