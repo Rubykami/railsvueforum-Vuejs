@@ -56,14 +56,94 @@
                 }
             }
             &__row {
-                align-self: center;
-                padding-bottom: 2rem;
-                margin-top: 2rem;
-                display: flex;
-                flex-direction: column;
-                font-family: Roboto;
+                &__username {
+                    align-self: center;
+                    padding-bottom: 2rem;
+                    margin-top: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    font-family: Roboto;
+                    width: 50vw;
+                    &__input {
+                        padding: 0.5rem;
+                        border-radius: 5px 5px 5px 5px;
+                        background-color: $DarkBackgroundColor;
+                        border: 1px solid $DarkerBorderColor;
+                        outline: none;
+                        font-size: 1rem;
+                        font-family: Roboto;
+                        color: $LighterFontColor;
+
+                        &::placeholder {
+                            font-size: 1rem;
+                            font-family: Roboto;
+                        }
+                    }
+                }
+                &__email {
+                    align-self: center;
+                    padding-bottom: 2rem;
+                    margin-top: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    font-family: Roboto;
+                    width: 50vw;
+                    &__input {
+                        padding: 0.5rem;
+                        border-radius: 5px 5px 5px 5px;
+                        background-color: $DarkBackgroundColor;
+                        border: 1px solid $DarkerBorderColor;
+                        outline: none;
+                        font-size: 1rem;
+                        font-family: Roboto;
+                        color: $LighterFontColor;
+
+                        &::placeholder {
+                            font-size: 1rem;
+                            font-family: Roboto;
+                        }
+                    }
+                }
+                &__pwdd {
+                    align-self: center;
+                    padding-bottom: 2rem;
+                    margin-top: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    font-family: Roboto;
+                    &__inputdiv {
+                        color: white;
+                        border-right: none;
+                        display: flex;
+                        &__input {
+                            width: 46vw;
+                            padding: 0.5rem;
+                            border-radius: 5px 0px 0px 5px;
+                            background-color: $DarkBackgroundColor;
+                            border: 1px solid $DarkerBorderColor;
+                            outline: none;
+                            font-size: 1rem;
+                            font-family: Roboto;
+                            color: $LighterFontColor;
+                        }
+                        &__eye {
+                            color: white;
+                            margin: auto;
+                            border: 1px solid $DarkerBorderColor;
+                            border-left: none;
+                            background-color: $DarkBackgroundColor;
+                            padding: 0.6rem;
+                            width: 21px;
+                            border-radius: 0px 5px 5px 0px;
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
                 &__termsprivacy {
                     padding-top: 1rem;
+                    padding-bottom: 1rem;
                     font-family: roboto;
                     &__links {
                         color: $LighterBlueColor;
@@ -80,15 +160,8 @@
                     padding-top: 0.5rem;
                     padding-bottom: 1rem;
                 }
-                &__input {
-                    font-size: 1rem;
-                    font-family: Roboto;
-                    &::placeholder {
-                        font-size: 1rem;
-                        font-family: Roboto;
-                    }
-                }
                 &__pwddiv {
+                    color: $LighterFontColor;
                     &__strength {
                         font-size: 1rem;
                         font-family: Roboto;
@@ -149,7 +222,7 @@
                         color: $LighterFontColor;
                         border: 1px solid $DarkerBorderColor;
                         border-radius: 5px 5px 5px 5px;
-                        background-image: url(../assets/img/select.svg);
+                        background-image: url(../../assets/img/select.svg);
                         background-repeat: no-repeat;
                         appearance: none;
                         background-position: 100%;
@@ -162,7 +235,7 @@
                     border: 1px solid $DarkerBorderColor;
                     background-color: $DarkBackgroundColor;
                     height: 1.8rem;
-                    width: 49rem;
+                    width: 40rem;
                     border-radius: 5px 5px 5px 5px;
                     color: $LighterFontColor;
                     font-size: 1.1rem;

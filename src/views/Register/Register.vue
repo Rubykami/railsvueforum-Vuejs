@@ -8,9 +8,9 @@
           <dfn class="main__registerform__div__column__dfn">Required</dfn>
         </label>
       </dt>
-      <dd class="main__registerform__div__row">
+      <dd class="main__registerform__div__row__username">
         <input
-          class="main__registerform__div__row__input"
+          class="main__registerform__div__row__username__input"
           type="text"
           name="username"
           required
@@ -30,9 +30,9 @@
         </label>
         <dfn class="main__registerform__div__column__dfn">Required</dfn>
       </dt>
-      <dd class="main__registerform__div__row">
+      <dd class="main__registerform__div__row__email">
         <input
-          class="main__registerform__div__row__input"
+          class="main__registerform__div__row__email__input"
           type="email"
           autocomplete="off"
           name="email"
@@ -48,14 +48,21 @@
           <dfn class="main__registerform__div__column__dfn">Required</dfn>
         </label>
       </dt>
-      <dd class="main__registerform__div__row">
-        <input
-          class="main__registerform__div__row__input"
-          type="password"
-          name="password"
-          required
-          v-model="FormValues.password"
-        />
+      <dd class="main__registerform__div__row__pwdd">
+        <div class="main__registerform__div__row__pwdd__inputdiv">
+          <input
+            class="main__registerform__div__row__pwdd__inputdiv__input"
+            :type="PwdType"
+            name="password"
+            required
+            v-model="FormValues.password"
+          />
+          <font-awesome-icon
+          @click="TogglePwdVisibility"
+              class="main__registerform__div__row__pwdd__inputdiv__eye"
+              :icon="EyeIcons"
+            />
+        </div>
         <meter
           class="main__registerform__div__row__meterpwd"
           :value="PwdMeterValue"
@@ -210,7 +217,22 @@
             required
             class="main__registerform__div__row__termsprivacy__checkbox"
           />
-          <span class="main__registerform__div__row__termsprivacy__conditions"> I agree to the <RouterLink to="/help/terms/" class="main__registerform__div__row__termsprivacy__links"> terms </RouterLink>and <RouterLink to="/help/privacy-policy/" class="main__registerform__div__row__termsprivacy__links"> privacy </RouterLink> policy. </span>
+          <span class="main__registerform__div__row__termsprivacy__conditions">
+            I agree to the
+            <RouterLink
+              to="/help/terms/"
+              class="main__registerform__div__row__termsprivacy__links"
+            >
+              terms </RouterLink
+            >and
+            <RouterLink
+              to="/help/privacy-policy/"
+              class="main__registerform__div__row__termsprivacy__links"
+            >
+              privacy
+            </RouterLink>
+            policy.
+          </span>
         </div>
       </dd>
     </div>
@@ -221,10 +243,11 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, watch } from "vue";
+import { reactive, watch, computed } from "vue";
 import WelcomeSection from "@/components/WelcomeSection/WelcomeSection.vue";
 
 let PwdStrength = "Entering a password is required.";
+
 
 const PwdStrengthValues = {
   initialvalue: "Entering a password is required.",
@@ -244,7 +267,20 @@ const FormValues = reactive({
   month: "",
   year: "",
   questionanswer: "",
+  isPwdVisible: false
 });
+
+const PwdType = computed(() => {
+  return FormValues.isPwdVisible ? "text" : "password"
+})
+
+function TogglePwdVisibility () {
+  FormValues.isPwdVisible = !FormValues.isPwdVisible
+};
+
+const EyeIcons = computed(() => {
+  return FormValues.isPwdVisible ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"
+})
 
 const RandomNumber = Math.floor(Math.random() * 6);
 
@@ -260,7 +296,7 @@ const ValidationArray = [
   { question: "What color is the sky?", answer: "blue", id: 5 },
 ];
 
-const ValidationQuestion = ValidationArray[RandomNumber] || ""
+const ValidationQuestion = ValidationArray[RandomNumber] || "";
 
 watch(
   () => FormValues.password.length,
@@ -299,45 +335,54 @@ watch(
 const SubmitForm = (event: any) => {
   switch (ValidationQuestion.question) {
     case ValidationArray[0].question:
-      if (FormValues.questionanswer !== ValidationArray[0].answer.toLowerCase()) {
+      if (
+        FormValues.questionanswer !== ValidationArray[0].answer.toLowerCase()
+      ) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
     case ValidationArray[1].question:
-      if (FormValues.questionanswer !== ValidationArray[1].answer.toLowerCase()) {
+      if (
+        FormValues.questionanswer !== ValidationArray[1].answer.toLowerCase()
+      ) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
       break;
     case ValidationArray[2].question:
-      if (FormValues.questionanswer !== ValidationArray[2].answer.toLowerCase()) {
+      if (
+        FormValues.questionanswer !== ValidationArray[2].answer.toLowerCase()
+      ) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
       break;
     case ValidationArray[3].question:
-      if (FormValues.questionanswer !== ValidationArray[3].answer.toLowerCase()) {
+      if (
+        FormValues.questionanswer !== ValidationArray[3].answer.toLowerCase()
+      ) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
       break;
     case ValidationArray[4].question:
-      if (FormValues.questionanswer !== ValidationArray[4].answer.toLowerCase()) {
+      if (
+        FormValues.questionanswer !== ValidationArray[4].answer.toLowerCase()
+      ) {
         alert("Incorrect Answer, please try again!");
         window.location.reload();
       }
       break;
   }
 
-  if (typeof(FormValues.day) !== "number") {
+  if (typeof FormValues.day !== "number") {
     alert("Incorrect day value, please type an number and try again!");
-        window.location.reload();
-  }
-  else if (typeof(FormValues.month) !== "number") {
+    window.location.reload();
+  } else if (typeof FormValues.month !== "number") {
     alert("Incorrect month value, please type an number and try again!");
-        window.location.reload();
+    window.location.reload();
   }
 };
 </script>
 
-<style lang="scss" src="./styles.scss"/>
+<style lang="scss" src="./styles.scss" />
